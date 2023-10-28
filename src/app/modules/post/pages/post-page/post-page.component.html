@@ -1,0 +1,59 @@
+<app-header-user></app-header-user>
+<main class="flex w-full bg-gray-50">
+  <!--* Card's Section **-->
+  <section class="w-3/5 p-5">
+    <app-post-card [postData]="userPost" (postEvent)="receivePost($event)"></app-post-card>
+  </section>
+
+  <!--** Form's update card Section **-->
+  <section class="flex w-2/5 bg-gray-800 p-5 justify-center border-l-4 border-green-500">
+    <div class="w-full max-w-xs fixed">
+      <div class="flex justify-center mb-5">
+        <div class="avatar">
+          <div class="w-24 mask mask-hexagon">
+            <img src="https://picsum.photos/id/11/200/300"/>
+          </div>
+        </div>
+      </div>
+
+      <form (ngSubmit)="checkOperation();" [formGroup]="formPost" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="#" autocomplete="off">
+        <div class="mb-4">
+          <div class="form-control w-full max-w-xs">
+            <label class="label">
+              <span class="label-text">What is new title?</span>
+            </label>
+            <input type="text" formControlName="title" name="title" id="title"  placeholder="Title here" class="input input-bordered input-success w-full max-w-xs" required=""/>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">What is new description?</span>
+            </label>
+            <textarea formControlName="description" name="description" id="description" class="textarea textarea-bordered textarea-success h-24" placeholder="Description here" required=""></textarea>
+          </div>
+        </div>
+
+         <div class="mb-4">
+          <div class="form-control w-full max-w-xs">
+            <label class="label">
+              <span class="label-text">What is picture URL?</span>
+            </label>
+            <input type="text" formControlName="image" name="image" id="image" placeholder="Title here" class="input input-bordered input-success w-full max-w-xs"required="" />
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <button [disabled]="formPost.invalid" class="w-full btn bg-green-500 text-gray-800">Make it</button>
+        </div>
+      </form>
+      <p class="text-center text-gray-500 text-xs">
+        &copy;2023 Wolke Corp.
+      </p>
+    </div>
+  </section>
+</main>
+
+
+
