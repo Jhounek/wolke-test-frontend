@@ -11,11 +11,10 @@
       </label>
       <ul tabindex="0" class="menu menu-sm dropdown-content text-white mt-3 z-[1] p-2 shadow bg-gray-900 rounded-box w-52">
         <li>
-          <a class="justify-between">
+          <a (click)="goToProfile()" class="justify-between">
             Profile
           </a>
         </li>
-        <li><a>Settings</a></li>
         <li><a (click)="closeSession()">Logout</a></li>
       </ul>
     </div>

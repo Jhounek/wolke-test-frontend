@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
@@ -9,7 +10,8 @@ import { CookieService } from 'ngx-cookie-service';
 export class HeaderUserComponent {
 
   constructor(
-    private cookie: CookieService
+    private cookie: CookieService,
+    private router: Router
   ){
 
   }
@@ -17,5 +19,9 @@ export class HeaderUserComponent {
   closeSession(){
     this.cookie.deleteAll();
     window.location.reload();
+  }
+
+  goToProfile(){
+    this.router.navigate(['/', 'edit-profile']);
   }
 }

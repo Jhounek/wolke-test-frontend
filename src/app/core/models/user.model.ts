@@ -1,6 +1,10 @@
+export interface UserData {
+  data:UserModel;
+}
+
 export interface UserModel {
-  id: number;
-  name: string;
-  email: string;
-  updated_at:string;
+  id?: string;
+  name?: string;
+  email?: string;
+  password?: string;
 }
